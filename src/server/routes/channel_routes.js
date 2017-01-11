@@ -28,7 +28,7 @@ module.exports = function(router) {
 
       res.json(data);
     });
-  })
+  });
 
   // post a new user to channel list db
   router.post('/channels/new_channel', function(req, res) {

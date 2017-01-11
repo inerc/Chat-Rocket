@@ -9,6 +9,7 @@ class SignIn extends Component {
     welcomePage: PropTypes.string.isRequired,
     dispatch: PropTypes.func.isRequired
   };
+
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -16,6 +17,7 @@ class SignIn extends Component {
       password: ''
     };
   }
+
   componentDidMount() {
     if (this.state.username.length) {
       this.refs.passwordInput.getInputDOMNode().focus();
@@ -23,6 +25,7 @@ class SignIn extends Component {
       this.refs.usernameInput.getInputDOMNode().focus();
     }
   }
+
   handleChange(event) {
     if (event.target.name === 'username') {
       this.setState({ username: event.target.value });
@@ -31,7 +34,9 @@ class SignIn extends Component {
       this.setState({ password: event.target.value });
     }
   }
+
   handleSubmit(event) {
+    debugger;
     event.preventDefault();
     const { dispatch } = this.props;
     if (this.state.username.length < 1) {
@@ -49,6 +54,7 @@ class SignIn extends Component {
       this.setState({ username: '', password: ''});
     }
   }
+
   render() {
     return (
       <div>
